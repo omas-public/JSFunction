@@ -5,12 +5,18 @@
  * @param      {string}  searchString  The search string
  * @return     {boolean}  { description_of_the_return_value }
  */
-let includes = (str, searchString) => {
+const includes = (str, searchString) => {
   let searchlen = searchString.length;
   let strlen    = str.length - searchlen + 1;
   for (let i = 0; i < strlen; i++) {
-    if (str.substr(i, searchlen) === searchString) {
-      return true;
+    if (str.charAt(i) === searchString.charAt(0)) {
+      let buf = '';
+      for (let j = 0; j < searchlen; j++) {
+        buf += str.charAt(i + j);
+      }
+      if (buf === searchString) {
+        return true;
+      }
     }
   }
   return false;
