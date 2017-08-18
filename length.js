@@ -4,14 +4,13 @@
  * @return {Number}   [文字数]
  */
 const length = (s) => {
-  let count = 0;
-  while (true) {
-    if (s.charAt(count++) === undefined) {
-      count--;
+  let index = 0;
+  for (;;) {
+    if (!s.charAt(index++)) {
       break;
     }
   }
-  return count;
+  return index;
 };
 
 console.assert(length('') === 0, 'NG');

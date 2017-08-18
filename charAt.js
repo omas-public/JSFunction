@@ -7,5 +7,4 @@
 const charAt = (str, index) => {
   return str[index];
 };
-
-console.assert(charAt('abc', 1) === 'b');
+console.assert(charAt('abc', 1) === 'b', 'NG');
