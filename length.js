@@ -3,15 +3,7 @@
  * @param  {String} s [文字列]
  * @return {Number}   [文字数]
  */
-const length = (s) => {
-  let index = 0;
-  for (;;) {
-    if (!s.charAt(index++)) {
-      break;
-    }
-  }
-  return index;
-};
+const length = s => Array.from(s, ((len, _) => len = len + 1, 0))
 
 console.assert(length('') === 0, 'NG');
 console.assert(length('abc') === 3, 'NG');
